@@ -1,0 +1,24 @@
+Package: dataset
+Title: Sample Dataset in LG Leadership Academy
+Version: 0.0.0.9000
+Authors@R: 
+    c(
+      person(given = "Chanyub",
+           family = "Park",
+           role = c("aut", "cre"),
+           email = "mrchypark@gmail.com",
+           comment = c(ORCID = "0000-0001-6474-2570")),
+      person(given = "Youngwoo",
+           family = "Kim",
+           role = c("aut", "cre"),
+           email = "stats7445@gmail.com"),
+      person(given = "SeonghoNa",
+           family = "NA",
+           role = c("aut", "cre"),
+           email = "drkevin2022@gmail.com")
+    )
+Description: Sample Dataset for R education.
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
