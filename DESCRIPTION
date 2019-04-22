@@ -10,11 +10,11 @@ Authors@R:
            comment = c(ORCID = "0000-0001-6474-2570")),
       person(given = "Youngwoo",
            family = "Kim",
-           role = c("aut", "cre"),
+           role = c("aut", "ctb"),
            email = "stats7445@gmail.com"),
       person(given = "SeonghoNa",
            family = "NA",
-           role = c("aut", "cre"),
+           role = c("aut", "ctb"),
            email = "drkevin2022@gmail.com")
     )
 Description: Sample Dataset for R education.
@@ -22,3 +22,8 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Imports: 
+    tibble
+License: CCBY-4.0
+Depends:
+    R (>= 2.10)

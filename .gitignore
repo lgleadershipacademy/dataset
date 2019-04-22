@@ -1,3 +1,9 @@
 .Rproj.user
 .Rhistory
 .RData
+.httr-oauth
+
+*.zip
+*.xlsx
+*.xls
+*.csv

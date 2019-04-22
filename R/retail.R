@@ -1,0 +1,16 @@
+#' Online_Retail Dataset
+#'
+#' DATASET_DESCRIPTION
+#'
+#' @format A data frame with 541909 rows and 8 variables:
+#' \describe{
+#'   \item{\code{InvoiceNo}}{character. DESCRIPTION.}
+#'   \item{\code{StockCode}}{character. DESCRIPTION.}
+#'   \item{\code{Description}}{character. DESCRIPTION.}
+#'   \item{\code{Quantity}}{double. DESCRIPTION.}
+#'   \item{\code{InvoiceDate}}{double. DESCRIPTION.}
+#'   \item{\code{UnitPrice}}{double. DESCRIPTION.}
+#'   \item{\code{CustomerID}}{double. DESCRIPTION.}
+#'   \item{\code{Country}}{character. DESCRIPTION.}
+#' }
+"retail"
