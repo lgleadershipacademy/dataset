@@ -10,24 +10,23 @@ library(readxl)
 library(fs)
 
 plan(multiprocess)
+#
+# drive_ls(
+#   path = as_id("1SkQCZuSamolWFFQxUDXO1httHiW9qKUq"),
+#   type = "xlsx",
+#   recursive = T
+# ) %$%
+#   future_map2(id,
+#               name,
+#               .progress = T,
+#               ~ purrr::safely(drive_download)(
+#                 as_id(.x),
+#                 path = fs::path("data-raw", .y),
+#                 overwrite = T
+#               ))
 
 drive_ls(
-  path = as_id("1SkQCZuSamolWFFQxUDXO1httHiW9qKUq"),
-  type = "xlsx",
-  recursive = T
-) %$%
-  future_map2(id,
-              name,
-              .progress = T,
-              ~ purrr::safely(drive_download)(
-                as_id(.x),
-                path = fs::path("data-raw", .y),
-                overwrite = T
-              ))
-
-drive_ls(
-  path = as_id("1SkQCZuSamolWFFQxUDXO1httHiW9qKUq"),
-  type = "spreadsheet",
+  path = as_id("1kT5kxkaSEWyJwD2vuM-ElkWcQmJOIjOD"),
   recursive = T
 ) %>%
   filter(grepl("^LGLA_", name)) %$%
@@ -64,18 +63,6 @@ readxl::read_xlsx("./data-raw/LGLA_VideoGameSales.xlsx") -> games
 
 readxl::read_xlsx("./data-raw/LGLA_Online_Retail.xlsx") -> retail
 
-usethis::use_data(avocado,
-                  churn,
-                  emp_tmnt,
-                  emp_attr,
-                  mall,
-                  credit_train,
-                  credit_test,
-                  games,
-                  retail,
-                  overwrite = T)
-
-
 ## mining data
 
 unzip(zipfile = "data-raw/LGLA_Mining_Process.zip", exdir = "./data-raw")
@@ -85,12 +72,23 @@ read_csv(
   "data-raw/MiningProcess_Flotation_Plant_Database.csv",
   col_types = cols(.default = col_character(),
                    date = col_datetime(format = ""))
-  # , n_max = 10
+  , n_max = 100
 ) %>%
   mutate_at(
     vars(-date),
     ~ parse_number(., locale = locale(decimal_mark = ","))
-  ) -> mining
+  ) -> mining_samples
 
-##
+usethis::use_data(avocado,
+                  churn,
+                  emp_tmnt,
+                  emp_attr,
+                  mall,
+                  credit_train,
+                  credit_test,
+                  games,
+                  retail,
+                  mining_samples,
+                  overwrite = T)
+
 

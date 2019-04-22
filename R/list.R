@@ -11,7 +11,6 @@ list_of_dataset <- function(){
     "credit_test",
     "games",
     "retail",
-    "mining",
-    "prod_line"
+    "mining_samples"
   )
 }
